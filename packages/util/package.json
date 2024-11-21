@@ -1,0 +1,25 @@
+{
+  "name": "@foo/util",
+  "version": "0.0.1",
+  "dependencies": {},
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "typings": "./dist/index.d.ts",
+  "private": false,
+  "dependencies": {
+    "@foo/util2": "workspace:"
+  },
+  "nx": {
+    "sourceRoot": "packages/util/src",
+    "name": "util"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "default": "./dist/index.js"
+    }
+  },
+  "types": "./dist/index.d.ts"
+}

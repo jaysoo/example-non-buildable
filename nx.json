@@ -6,7 +6,10 @@
       "sharedGlobals"
     ],
     "production": [
-      "default"
+      "default",
+      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+      "!{projectRoot}/tsconfig.spec.json",
+      "!{projectRoot}/src/test-setup.[jt]s"
     ],
     "sharedGlobals": []
   },
@@ -21,6 +24,20 @@
           "targetName": "build",
           "configName": "tsconfig.lib.json"
         }
+      },
+      "exclude": [
+        "packages/util2/*"
+      ]
+    },
+    {
+      "plugin": "@nx/vite/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "testTargetName": "test",
+        "serveTargetName": "serve",
+        "previewTargetName": "preview",
+        "serveStaticTargetName": "serve-static",
+        "typecheckTargetName": "typecheck"
       }
     }
   ]
